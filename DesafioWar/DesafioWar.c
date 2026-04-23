@@ -11,40 +11,40 @@ struct Territorio {
 };
 
 int main() {
-// Vetor para armazenar 5 estruturas tipo Territorio
+//Vetor para armazenar 5 estruturas tipo Territorio
     struct Territorio exercito[TOTAL_TERRITORIOS];
 
-// Laço for para preencher o cadastro dos territórios
+//Laço for para preencher o cadastro dos territórios
 for (int i = 0; i < 5; i++){
- printf("Territorio %d\n", i + 1);
+ printf("Território %d\n", i + 1);
 
-     printf("Nome do territorio: ");
+     printf("Nome do território: ");
      fgets(exercito[i].nomeTerritorio, 30, stdin);
      exercito[i].nomeTerritorio[strcspn(exercito[i].nomeTerritorio, "\n")] = '\0';
 
-     printf("Cor do exercito: ");
+     printf("Cor do exército que o dominou: ");
      fgets(exercito[i].corExercito, 10, stdin);
      exercito[i].corExercito[strcspn(exercito[i].corExercito, "\n")] = '\0';
 
-     printf("Numero de tropas: ");
+     printf("Quantidade de tropas: ");
     while (scanf("%d", &exercito[i].numeroTropa) != 1) {
-    printf("Digite um numero valido: ");
-    while (getchar() != '\n'); // limpa buffer
+    printf("Digite um número válido: ");
+    while (getchar() != '\n'); //Limpa o buffer
     }
-    getchar(); //Para limpar o que sobra no buffer que pode causar erro
+    getchar(); //Para limpar o que sobrar no buffer que pode causar erro
 
      printf("\n");
 
 }
 
 //Exibir os dados do cadastro
- printf("=== Territorios cadastrados ===\n");
+ printf("--- Territórios cadastrados ---\n");
 
     for (int i = 0; i < 5; i++) {
-        printf("Territorio %d:\n", i + 1);
-        printf("Nome: %s\n", exercito[i].nomeTerritorio);
-        printf("Cor do exercito: %s\n", exercito[i].corExercito);
-        printf("Numero de tropas: %d\n", exercito[i].numeroTropa);
+        printf("Território %d:\n", i + 1);
+        printf("- Nome: %s\n", exercito[i].nomeTerritorio);
+        printf("- Cor do exército: %s\n", exercito[i].corExercito);
+        printf("- Número de tropas: %d\n", exercito[i].numeroTropa);
         printf("\n");
     }
 
